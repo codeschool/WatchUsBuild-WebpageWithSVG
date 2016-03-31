@@ -1,0 +1,180 @@
+/* Global
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #010101;
+}
+
+body {
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+  font-weight: normal;
+  margin: 0;
+}
+
+h2 {
+  color: #b8b9bb;
+  font-weight: normal;
+  font-size: 300%;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: 0;
+}
+
+ul {
+  margin-top: 0.5em;
+}
+
+/* Header
+   ========================================================================== */
+
+header {
+  background: #111;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 27%;
+  z-index: 1;
+}
+
+/* Brand */
+
+.brand {
+  padding: 0.5em;
+  width: 100%;
+}
+
+.brand text {
+  font-family: 'Trade Winds';
+  fill: #FFF;
+}
+
+/* Nav */
+
+.nav-item {
+  cursor: pointer;
+  padding: 2em 2em 2em 4em;
+  position: relative;
+  transition: background 0.25s linear;
+}
+
+.nav-item h2 {
+  transition: color 0.25s linear;
+}
+
+.nav-item:hover {
+  background: #090909;
+}
+
+.nav-item:hover h2,
+.nav-item.is-active h2 {
+  color: #ffffff;
+}
+
+.nav-item:hover .zombie {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.nav-item.is-active {
+  background: #000000;
+  position: static;
+}
+
+/* Content
+   ========================================================================== */
+
+.content {
+  background: url('../images/bg.jpg') no-repeat center center / cover;
+  bottom: 0;
+  left: 27%;
+  overflow-y: scroll;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Zombie
+   ========================================================================== */
+
+.zombie {
+  bottom: 10%;
+  filter: grayscale(100%);
+  height: 80%;
+  left: 1em;
+  max-height: 80%;
+  position: absolute;
+  transition: all 0.25s linear;
+  width: auto;
+}
+
+.is-active .zombie {
+  filter: grayscale(0);
+  height: 90%;
+  left: 105%;
+  max-height: 100%;
+  top: 5%;
+}
+
+.zombie-title {
+  left: 27%;
+  opacity: 0.1;
+  position: fixed;
+  top: 0;
+  width: 73%;
+}
+
+.zombie-title text {
+  fill: #fff;
+}
+
+.zombie-meta {
+  left: 40%;
+  position: absolute;
+  top: 5%;
+  z-index: 3;
+}
+
+.zombie-melee,
+.zombie-shoot,
+.zombie-run {
+  bottom: 0;
+  font-size: 125%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.25s linear;
+  visibility: hidden;
+}
+
+.zombie-melee {
+  background: url('../images/bg-melee.png') no-repeat center top / 100% auto;
+}
+
+.zombie-shoot {
+  background: url('../images/bg-shoot.png') no-repeat center top / 100% auto;
+}
+
+.zombie-run {
+  background: url('../images/bg-run.png') no-repeat center top / 100% auto;
+}
+
+.zombie-melee.is-active,
+.zombie-shoot.is-active,
+.zombie-run.is-active {
+  opacity: 1;
+  visibility: visible;
+}
